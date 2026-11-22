@@ -1,19 +1,13 @@
 (setq auto-save-default nil)
 (setq make-backup-files nil)
-
-;; Turn off lock files (the .#filename files)
 (setq create-lockfiles nil)
 
 (defun my-c-mode-style-hook ()
-  ;; Use Stroustrup style (opening braces on next line)
   (c-set-style "stroustrup")
-
-  ;; Or use your preferred indentation width
   (setq c-basic-offset 2))
 
 (set-face-attribute 'default nil :font "Cascadia Code" :height 100)
 (load-theme 'tango-dark)
-
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -65,9 +59,6 @@
 			((staticcheck . t)
 			 (matcher . "CaseSensitive")))))
 
-;; (ido-mode 1)
-;; (ido-everywhere 1)
-  
 (add-hook 'c-mode-common-hook #'my-c-mode-style-hook)
 
 (custom-set-variables
